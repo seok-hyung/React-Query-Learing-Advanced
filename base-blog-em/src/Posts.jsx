@@ -11,6 +11,7 @@ export function Posts() {
   const { data, isLoading, error, isError } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
+    staleTime: 2000, // 2초
   })
 
   if (isLoading) {
@@ -24,9 +25,6 @@ export function Posts() {
       </>
     )
   }
-  // useQuery는 옵션 객체를 받는다.
-  // replace with useQuery
-  // const data = []
 
   return (
     <>
